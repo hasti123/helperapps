@@ -4,13 +4,12 @@ def findNumberCommasPerLine(numberOfCommasPerLine, filename):
     linenumber = 0
     errorLines = []
 
-    with open(filename, 'r') as f:
-        for line in f:
+    with open(filename, 'r') as file:
+        for line in file:
             linenumber = linenumber + 1
             numCommas = line.count(',')
             if not numCommas == numberOfCommasPerLine:
                 errorLines.append(linenumber)
-
 
     print("Error lines: ")
     print(errorLines)
